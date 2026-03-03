@@ -45,12 +45,15 @@ The project follows the Medallion design pattern to ensure data quality and line
 
 ---
 
-## 📂 Repository Structure
+## 📂 Repository Structure (In progress)
 
-- `01_bronze/`: DDL and Stored Procedures for raw data ingestion.
-- `02_silver/`: Scripts for data cleansing and standardization.
-- `03_gold/`: Final analytical model (Fact & Dimension views).
-- `docs/`: Technical documentation, naming conventions, and architecture diagrams.
-- `analysis/`: Exploratory Data Analysis (EDA) scripts and business queries.
+- **datasets/**: Contains the 6 raw source CSV files (CRM & ERP).
+- **docs/**: Technical documentation and architecture diagrams.
+- **scripts/**:
+    - `01.init/`: Database and schema initialization scripts.
+    - `02_bronze_layer/`: DDL and Stored Procedures for raw data ingestion.
+    - `03_data_discovery/`: Scripts for initial data exploration and quality assessment.
+    - `04_silver_layer/`: Data cleansing, standardization, and transformation scripts.
+    - `05_gold_layer/`: Final Star Schema implementation (Fact & Dimension views).
 
 ---
