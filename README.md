@@ -1,67 +1,56 @@
-# Data Warehouse and Analytics Project
+# Data Warehouse & Analytics Project: Medallion Architecture 🚀
 
-Welcome to my **Data Warehouse and Analytics Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. This project is currently being implemented as part of my data engineering portfolio.
+Welcome to my Data Engineering portfolio. This project demonstrates the implementation of a modern **Data Warehouse** using a **Medallion Architecture** (Bronze, Silver, Gold) hosted on **PostgreSQL**.
 
 ---
 
 ## 🙏 Acknowledgments
 
-I would like to express my sincere gratitude to **Baraa Khatib Salkini** (**Data With Baraa**). This project is built following his expert curriculum and architectural framework. His guidance on Medallion Architecture and SQL best practices has been foundational for this implementation.
+I would like to express my sincere gratitude to **Baraa Khatib Salkini** (**Data With Baraa**). This project is built following his expert curriculum and architectural framework. His guidance on SQL best practices and data modeling has been foundational for this implementation.
 
 ---
 
-## 🏗️ Data Architecture (In Progress)
+## 🏗️ High-Level Architecture
 
-The data architecture for this project follows the Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
+The project follows the Medallion design pattern to ensure data quality and lineage:
 
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into a SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+![Architecture Diagram](./docs/architecture_diagram.jpg)
 
-*Note: Architecture diagrams and visual data flows are currently under development.*
+1.  **Bronze Layer (Raw)**: Direct ingestion of CRM and ERP CSV files into physical tables using a "Truncate & Insert" strategy.
+2.  **Silver Layer (Cleansing)**: Data standardization, handling NULLs, and cleaning formats. Normalization of source data.
+3.  **Gold Layer (Analytical)**: Business-ready **Star Schema** (Fact & Dimension tables) implemented via SQL Views for high-performance reporting.
 
 ---
 
-## 📖 Project Overview
+## 📖 Project Objectives
 
-This project involves:
+### 1. Data Engineering (Infrastructure)
+- **ETL Pipelines**: Automated data loading from source systems using Stored Procedures.
+- **Data Integration**: Merging fragmented data from CRM and ERP sources into a unified model.
+- **Data Integrity**: Implementation of **Surrogate Keys** and **Foreign Key checks** to ensure a robust Star Schema.
 
-1. **Data Architecture**: Implementing a Modern Data Warehouse using Medallion Architecture.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems (ERP & CRM) into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
-
-🎯 This repository showcases expertise in:
-- SQL Development
-- Data Engineering
-- ETL Pipeline Development
-- Data Modeling
-- Data Analytics
+### 2. Data Analytics (Insights)
+- **EDA (Exploratory Data Analysis)**: Leveraging the Gold layer to answer business questions.
+- **KPI Tracking**: Analyzing customer behavior, product performance, and sales trends.
+- **Demographic Analysis**: Advanced age and gender distribution reporting using PostgreSQL-specific functions (`AGE`, `EXTRACT`).
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-- **[PostgreSQL](https://www.postgresql.org/):** Advanced Open Source relational database used to host the data warehouse.
-- **[pgAdmin 4](https://www.pgadmin.org/):** The most popular and feature-rich Open Source administration and development platform for PostgreSQL.
-- **[Git & GitHub](https://github.com/):** Version control and project management.
+- **Database:** [PostgreSQL](https://www.postgresql.org/)
+- **Management:** [pgAdmin 4](https://www.pgadmin.org/)
+- **Version Control:** Git & GitHub
+- **Methodology**: Medallion Architecture & Dimensional Modeling (Star Schema)
 
 ---
 
-## 🚀 Project Requirements
+## 📂 Repository Structure
 
-### Building the Data Warehouse (Data Engineering)
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model.
-
-### BI: Analytics & Reporting (Data Analysis)
-Develop SQL-based analytics to deliver detailed insights into:
-- **Customer Behavior**
-- **Product Performance**
-- **Sales Trends**
+- `01_bronze/`: DDL and Stored Procedures for raw data ingestion.
+- `02_silver/`: Scripts for data cleansing and standardization.
+- `03_gold/`: Final analytical model (Fact & Dimension views).
+- `docs/`: Technical documentation, naming conventions, and architecture diagrams.
+- `analysis/`: Exploratory Data Analysis (EDA) scripts and business queries.
 
 ---
-
-## 📂 Repository Structure (in progress)
