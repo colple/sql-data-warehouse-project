@@ -47,32 +47,6 @@ The project follows the Medallion design pattern to ensure data quality and line
 
 ## 📂 Repository Structure (In progress)
 
-# Data Warehouse & Analytics Project: Medallion Architecture 🚀
-
-Welcome to my Data Engineering portfolio. This project demonstrates the implementation of a modern **Data Warehouse** using a **Medallion Architecture** (Bronze, Silver, Gold) hosted on **PostgreSQL**.
-
----
-
-## 🙏 Acknowledgments
-
-I would like to express my sincere gratitude to **Baraa Khatib Salkini** (**Data With Baraa**). This project is built following his expert curriculum and architectural framework. His guidance on SQL best practices and data modeling has been foundational for this implementation.
-
----
-
-## 🏗️ High-Level Architecture
-
-The project follows the Medallion design pattern to ensure data quality and lineage:
-
-![Architecture Diagram](./docs/architecture_diagram.jpg)
-
-1. **Bronze Layer (Raw)**: Direct ingestion of CRM and ERP CSV files into physical tables using a "Truncate & Insert" strategy.
-2. **Silver Layer (Cleansing)**: Data standardization, handling NULLs, and cleaning formats. Normalization of source data.
-3. **Gold Layer (Analytical)**: Business-ready **Star Schema** (Fact & Dimension tables) implemented via SQL Views for high-performance reporting.
-
----
-
-## 📂 Repository Structure
-
 ```text
 ├── datasets/                       # Raw datasets used for the project (ERP and CRM data)
 ├── docs/                           # Project documentation and architecture details
@@ -91,5 +65,5 @@ The project follows the Medallion design pattern to ensure data quality and line
 ├── README.md                       # Project overview and instructions
 ├── LICENSE                         # License information for the repository
 └── .gitignore                      # Files and directories to be ignored by Git
-
+```
 ---
